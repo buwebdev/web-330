@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Knockout Bindings</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+
+    <!-- JavaScript Libraries -->
+    <script src="../knockout-3.4.2.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div role="main" class="container">
+      <br /><br />
+
+      <!-- error messages -->
+      <div class="alert-box" data-bind="if: salary() < 0">
+        <div class="alert alert-danger" role="alert">
+          <strong>Oh snap!</strong> Format error...
+        </div>
+      </div>
+      <br />
+
+      <div class="form-group">
+        <h2>Other Bindings Example</h2>
+        <label for="txtSalary">Salary Expectation </label> |
+        <a data-bind="attr: {href: calculatorUrl}" target="_blank"
+          >Paycheck Calculator</a
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter a number..."
+          data-bind="value: salary"
+          id="txtSalary"
+        />
+      </div>
+
+      <div class="form-group" data-bind="if: salary()">
+        <h4>
+          Actual Salary:
+          <span
+            data-bind="style: {color: salary() <= 0 ? 'red' : 'black'}, text: formatSalary(salary())"
+          ></span>
+        </h4>
+      </div>
+
+      <br />
+    </div>
+
+    <script>
+      function PayrollViewModel() {
+        this.salary = ko.observable();
+        this.calculatorUrl = ko.observable(
+          "https://www.adp.com/tools-and-resources/calculators-and-tools/payroll-calculators/salary-paycheck-calculator.aspx"
+        );
+      }
+
+      function formatSalary(salary) {
+        var s = parseInt(salary);
+        return isNaN(s) ? convertToCurrency(0) : convertToCurrency(s);
+      }
+
+      function convertToCurrency(val) {
+        return parseInt(val).toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD"
+        });
+      }
+
+      ko.applyBindings(new PayrollViewModel());
+    </script>
+  </body>
+</html>

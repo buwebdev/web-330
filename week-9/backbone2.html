@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello MVC</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+
+    <!-- JavaScript references -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div role="main" class="container">
+      <br />
+      <br />
+      <h1>Hello MVC Example 2</h1>
+      <p class="lead">Models and Collections...</p>
+
+      <div class="row">
+        <div class="col-sm-9">
+          <table class="table table-dark table-striped table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function Fruit(id, name, price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+      }
+
+      var FruitModel = Backbone.Model.extend({
+        defaults: {
+          id: "",
+          name: "",
+          price: 0
+        }
+      });
+
+      var FruitCollection = Backbone.Collection.extend({
+        model: FruitModel
+      });
+
+      var Fruits = new FruitCollection();
+      Fruits.add(new Fruit("100", "Orange", 1.99));
+      Fruits.add(new Fruit("101", "Apple", 0.99));
+      Fruits.add(new Fruit("102", "Mango", 1.49));
+      Fruits.add(new Fruit("103", "Watermelon", 9.99));
+
+      Fruits.each(function(fruit) {
+        $("#table-body").append(
+          "<tr>" +
+            "<td>" +
+            fruit.get("id") +
+            "</td>" +
+            "<td>" +
+            fruit.get("name") +
+            "</td>" +
+            "<td>" +
+            fruit.get("price") +
+            "</td>" +
+            "</tr>"
+        );
+      });
+    </script>
+  </body>
+</html>

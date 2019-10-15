@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Proxy Pattern Examples</title>
+
+    <!-- jquery Reference Library -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <!-- Example 1 -->
+      <h2>Proxy Example 1</h2>
+      <button id="btnExample1">Run test</button>
+      <br /><span id="proxyExampleOne"></span>
+
+      <hr />
+
+      <!-- Example 2 -->
+      <h2>Proxy Example 2</h2>
+      <button id="btnExample2Left">Run left test</button> |
+      <button id="btnExample2Right">Run right test</button> <br /><span
+        id="proxyExampleTwo"
+      ></span>
+
+      <hr />
+    </div>
+
+    <script>
+      $(function() {
+        // Example 1
+        var truck = {
+          make: "Ford",
+          model: "F-150",
+          display: function() {
+            $("#proxyExampleOne").append(
+              "<br />Make: " + this.make + "<br />" + "Model: " + this.model
+            );
+          }
+        };
+
+        $("#btnExample1").click($.proxy(truck, "display"));
+
+        // Example 2
+        var john = { name: "John" };
+        var jennifer = { name: "Jennifer" };
+
+        var writer = function() {
+          $("#proxyExampleTwo").html("");
+          $("#proxyExampleTwo").append("<br />Name: " + this.name);
+        };
+
+        $("#btnExample2Left").on("click", $.proxy(writer, john));
+        $("#btnExample2Right").on("click", $.proxy(writer, jennifer));
+      });
+    </script>
+  </body>
+</html>

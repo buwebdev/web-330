@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 4.2 - GET and POST Operations</title>
+
+    <!-- jQuery reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h4>HTTP GET</h4>
+    <button id="get1">HTTP GET Request Inline)</button>
+    |
+    <button id="get2">HTTP GET Request (Object Literal)</button>
+    <br />
+
+    <br />
+    <hr />
+    <h4>HTTP POST</h4>
+    <button id="post1">HTTP POST Request Inline)</button>
+    |
+    <button id="post2">HTTP POST Request (Object Literal)</button>
+    <br />
+
+    <script type="text/javascript">
+      $(function() {
+        // https://github.com/toddmotto/public-apis/blob/master/README.md
+
+        $("#get1").click(function() {
+          $.get("https://dog.ceo/api/breeds/list/all", function(data, status) {
+            console.log(
+              "Data: " + JSON.stringify(data) + "\nStatus: " + status
+            );
+          });
+        });
+
+        $("#get2").click(function() {
+          $.ajax({
+            url: "https://dog.ceo/api/breeds/list/all",
+            dataType: "json",
+            type: "GET",
+            success: function(data) {
+              console.log(
+                "Data: " + JSON.stringify(data) + "\nStatus: " + status
+              );
+            }
+          });
+        });
+
+        $("#post1").click(function() {
+          var userData = { username: "admin", password: "secret" };
+
+          $.post("http://httpbin.org/post", userData, function(data, status) {
+            console.log(
+              "Username: " +
+                data.form.username +
+                "\nPassword: " +
+                data.form.password +
+                "\nStatus: " +
+                status
+            );
+          });
+        });
+
+        $("#post2").click(function() {
+          $.ajax({
+            url: "http://httpbin.org/post",
+            dataType: "json",
+            type: "POST",
+            data: { username: "admin", password: "secret" },
+            success: function(data) {
+              console.log(
+                "Username: " +
+                  data.form.username +
+                  "\nPassword: " +
+                  data.form.password +
+                  "\nStatus: " +
+                  status
+              );
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
