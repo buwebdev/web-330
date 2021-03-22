@@ -1,0 +1,54 @@
+<!--
+    Title: form-with-results.html
+    Author: Professor Krasso
+    Date: 2/4/2021
+    Description: An example program to show how to use CSS cards with form and form fields
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB 330 - Enterprise JavaScript II</title>
+
+    <link rel="stylesheet" type="text/css" href="../../theme.css" /> <!-- This is a file reference to the theme.css file that you will be creating throughout the course -->
+    <link rel="stylesheet" type="text/css" href="../styles/site.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/assign-container.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+
+    <div class="assign-container">
+        <h1 class="app-header">Form with form results example</h1>
+
+        <div class="assign-content">
+            <div class="card">
+                <div class="card-title">Form example</div>
+                <div class="card-content">
+                    <div class="form">
+                        <div class="form-field">
+                            <label for="txtMyName">My name:</label>
+                            <input type="text" class="input" id="txtMyName" name="myName" />
+                        </div>
+
+                        <div class="form-field">
+                            <button class="btn btn-primary full-width">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="assign-container">
+        <div class="assign-content">
+            <div class="card">
+                <div class="card-title">Form Results</div>
+                <div class="card-content assign-results-text">
+                    Results from the form submission will go here...
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

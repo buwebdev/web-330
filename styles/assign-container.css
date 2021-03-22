@@ -1,0 +1,29 @@
+/**
+    Title: assign-container.css
+    Author: Professor Krasso
+    Date: 2/4/2021
+    Description: Styling for the assign-structure.html file
+ */
+
+/**
+    Page container. This should be placed in the body of each HTML page you create.
+ */
+.assign-container {
+    padding: 10px;
+}
+
+/**
+    Div to hold the content for the assignment's in this course.
+ */
+.assign-content {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/**
+    Div title for the results program output section.
+ */
+.assign-results-text {
+    text-align: center;
+    font-size: 28px;
+}

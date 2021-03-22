@@ -1,0 +1,73 @@
+<!--
+    Title: assign-structure.html
+    Author: Professor Krasso
+    Date: 2/4/2021
+    Description: An example program to demonstrate how to structure the HTML/CSS of an assignment.
+    This file leverages the assign-structure.css file, which contains the styling for assign-container, assign-content,
+    and assign-results-text. These styles will be used with the card, card-title, card-content, and app-header classes. Also,
+    note the body has been assigned a CSS class of light-theme. Please refer to the Web 330, HTML, CSS, and JavaScript requirements
+    document for more details.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB 330 - Enterprise JavaScript II</title>
+
+    <link rel="stylesheet" type="text/css" href="../../theme.css" /> <!-- This is a file reference to the theme.css file that you will be creating throughout the course -->
+    <link rel="stylesheet" type="text/css" href="../styles/site.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/assign-container.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <!-- container wrapper for a card -->
+    <div class="assign-container">
+        <h1 class="app-header">Example of how to include multiple cards in an assignment.</h1>
+
+        <!-- container wrapper for a card -->
+        <div class="assign-content">
+
+            <!-- card with a card title and card content -->
+            <div class="card">
+
+                <div class="card-title">
+                    Card with container example
+                </div>
+
+                <div class="card-content">
+                    This is an example of how to reuse the CSS classes: assign-container, assign-content, card, card-title, and card-content
+                </div>
+            </div>
+            <!-- end card -->
+        </div>
+        <!-- end assign-content-->
+    </div>
+    <!-- end assign-container -->
+
+    <!-- container wrapper for a card -->
+    <div class="assign-container">
+
+        <!-- container wrapper for a card -->
+        <div class="assign-content">
+
+            <!-- card with a card title, card content, and assign-results-text -->
+            <div class="card">
+
+                <div class="card-title">
+                    Program Results
+                </div>
+
+                <div class="card-content assign-results-text">
+                    The expected results will be be displayed in this section
+                </div>
+            </div>
+            <br />
+            <a href="#">Return</a>
+            <!-- end card -->
+        </div>
+        <!-- end assign-content -->
+    </div>
+    <!-- end assign-container -->
+</body>
+</html>

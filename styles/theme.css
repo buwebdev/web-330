@@ -1,0 +1,43 @@
+/**
+    Title: theme.css
+    Author: Professor Krasso
+    Date: 2/4/2021
+    Description: Demonstrates how to create CSS variables for website themes
+*/
+
+body.light-theme {
+    --text-color: #000;
+    --background-color: #fff;
+}
+
+body.dark-theme {
+    --text-color: #fafafa;
+    --background-color: #303030;
+}
+
+* {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+#icon-mode:hover {
+    cursor: pointer;
+}
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#icon-text {
+    padding-left: 10px;
+}
+
+.pull-right {
+    float: right;
+}

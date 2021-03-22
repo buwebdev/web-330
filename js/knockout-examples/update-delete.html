@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>UD Operations</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- JavaScript Libraries -->
+    <script src="knockout-3.4.2.js"></script>
+
+    <style>
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div role="main" class="container">
+      <br /><br />
+
+      <div class="row" data-bind="if: error">
+        <div class="col-sm-12">
+          <div class="alert alert-danger" role="alert">
+            <strong>Warning!</strong> <span data-bind="text: error()"></span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <h2>UD Example</h2>
+      <div class="row">
+        <div class="col-sm-8">
+          <div
+            class="card card-inverse"
+            style="background-color: #333; border-color: #333; color: white;"
+          >
+            <div class="card-block p-3">
+              <h3 class="card-title">Grocery List</h3>
+              <div class="card-text">
+                <table class="table table-dark table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>FruitId</th>
+                      <th>Name</th>
+                      <th>Functions</th>
+                    </tr>
+                  </thead>
+                  <tbody data-bind="foreach: Fruits">
+                    <tr>
+                      <td data-bind="text: Id"></td>
+                      <td data-bind="text: Name"></td>
+                      <td>
+                        <span>
+                          <a
+                            href="#"
+                            class="btn btn-success"
+                            data-bind="click: $root.edit"
+                          >
+                            <i class="fa fa-pencil fa-lg"> </i> EDIT
+                          </a>
+                        </span>
+                        |
+                        <span>
+                          <a
+                            href="#"
+                            class="btn btn-danger"
+                            data-bind="click: $root.remove"
+                          >
+                            <i class="fa fa-trash-o fa-lg"> </i> DELETE
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4" data-bind="if: Fruit">
+          <div
+            class="card card-inverse"
+            style="background-color: #333; border-color: #333; color: white;"
+          >
+            <div class="card-block p-3">
+              <h3 class="card-title">Grocery List Item</h3>
+              <div class="card-text">
+                <div class="form-group">
+                  <label for="txtName">Name: </label>
+                  <input
+                    type="text"
+                    id="txtName"
+                    data-bind="value: Fruit().Name"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="form-group float-right">
+                  <button
+                    data-bind="click: $root.cancel"
+                    class="btn btn-group btn-danger"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    data-bind="click: $root.update"
+                    class="btn btn-group btn-success"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+    </div>
+
+    <script>
+      function Fruit(id, name) {
+        this.Id = id;
+        this.Name = name;
+      }
+
+      var fruitList = [
+        new Fruit(1, "Apple"),
+        new Fruit(2, "Orange"),
+        new Fruit(3, "Mango"),
+        new Fruit(4, "Watermelon"),
+        new Fruit(5, "Cantaloupe")
+      ];
+
+      function ShoppingCartViewModel() {
+        var self = this;
+
+        self.error = ko.observable("");
+
+        self.Id = ko.observable("");
+        self.Name = ko.observable("");
+
+        var Fruit = {
+          Id: self.Id,
+          Name: self.Name
+        };
+
+        self.Fruit = ko.observable();
+        self.Fruits = ko.observableArray(fruitList);
+
+        self.edit = function(Fruit) {
+          self.Fruit(Fruit);
+        };
+
+        self.remove = function(Fruit) {
+          self.Fruits.remove(Fruit);
+        };
+
+        self.cancel = function() {
+          self.Fruit(null);
+        };
+
+        self.update = function() {
+          var l_fruit = self.Fruit();
+          self.Fruits.remove(self.Fruit());
+          self.Fruits.push(l_fruit);
+        };
+      }
+
+      ko.applyBindings(new ShoppingCartViewModel());
+    </script>
+  </body>
+</html>
