@@ -1,0 +1,16 @@
+# IDE
+.vscode
+.idea
+
+# Node ddependency directories
+node_modules/
+*/ndoe_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# macOS files
+.DS_Store
