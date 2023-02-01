@@ -1,0 +1,54 @@
+<!-- 
+============================================
+; Title:  index.html
+; Author: Professor Krasso
+; Date:   1 February 2023
+; Description: Landing page for the house program
+;===========================================
+*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 5: Example</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="site.css">
+
+    <script src="header-component.js"></script>
+</head>
+<body>
+  <div id="container">
+
+    <div id="app-header">
+      <header-component></header-component>
+    </div>
+
+      <br />
+    <div id="app-content">
+
+    </div>
+
+  </div>
+
+<script type="module">
+  import { HouseManager } from "./house-manager.js";
+
+  let houseManager = new HouseManager();
+
+  let housesDisplay = `<h2>House Count: ${houseManager.count()}</h2><hr />`
+
+  for (let house of houseManager) {
+    console.log(house)
+    housesDisplay += `<ul>`
+    housesDisplay += `<li>ID: ${house.id}</li><li>Name: ${house.name}</li><li>Mascot: ${house.mascot}</li></ul><br /><hr />`
+  }
+
+  console.log(housesDisplay)
+  document.getElementById('app-content').innerHTML = housesDisplay
+
+</script>
+</body>
+</html>

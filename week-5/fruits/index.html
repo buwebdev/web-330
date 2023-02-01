@@ -1,0 +1,79 @@
+<!-- 
+============================================
+; Title:  index.html
+; Author: Professor Krasso
+; Date:   1 February 2023
+; Description: Landing page for the fruits program
+;===========================================
+*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 5: Example</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="site.css">
+
+    <script src="basket-component.js"></script>
+</head>
+<body>
+    <div id="container">
+
+        <div id="app-header">
+            <h1>Assignment 5: Example</h1>
+            <h2>Fruits</h2>
+        </div>
+
+        <br />
+        <div id="app-content">
+
+            <h2>
+                Fruit Basket
+                <basket-component></basket-component>
+                <hr />
+            </h2>
+
+            <input type="text" id="txtFruit" placeholder="Enter a fruit..." required name="txtFruit" />
+            <button id="btnAdd" name="btnAdd">Add Fruit</button>
+            <button id="btnShow" name="btnShow">Show Basket</button>
+            <button id="btnEmpty" name="btnEmpty">Empty Basket</button>
+        </div>
+
+    </div>
+
+    <script type="module">
+        import { Fruit } from './fruit.js';
+        import { FruitManager } from './fruit-manager.js'
+
+        const fruitManager = new FruitManager();
+
+        document.getElementById('btnAdd').onclick = function () {
+
+            let txtFruit = document.getElementById('txtFruit').value
+
+            const newFruit = new Fruit(txtFruit)
+
+            fruitManager.add(newFruit)
+
+            console.log(newFruit)
+
+            document.getElementById('basket-count').innerHTML = fruitManager.count().toString()
+
+            document.getElementById('txtFruit').value = ''
+        }
+
+        document.getElementById('btnShow').onclick = function () {
+            alert(JSON.stringify(fruitManager.fruits))
+        }
+
+        document.getElementById('btnEmpty').onclick = function() {
+            fruitManager.fruits = []
+            document.getElementById('basket-count').innerHTML = fruitManager.count().toString()
+        }
+    </script>
+</body>
+</html>
