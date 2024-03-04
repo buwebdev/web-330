@@ -1,0 +1,362 @@
+/*  JavaScript 7th Edition
+    Chapter 9
+    Chapter case
+
+    Eating Well in Season
+    Large format style sheet
+
+    Filename: styles.css
+*/
+
+/* apply a natural box layout model to all elements */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header,  
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header,  menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+   width: 800px;
+   margin: 0 auto;
+   font-family: "Alegreya Sans", arial, helvetica, sans-serif;
+   background: rgb(170,189,126);
+}
+
+ol, ul {
+   list-style: none;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+a:link, a:visited {
+   text-decoration: none;
+   color: inherit;
+}
+
+a:hover {
+   text-decoration: none;
+   color: inherit;
+}
+
+a:active {
+   text-decoration: none;
+   color: inherit;
+}
+
+/* container */
+#container {
+   overflow: auto;
+   position: relative;
+}
+
+/* page header */
+header {
+   float: left;
+   background: rgb(161,127,67);
+}
+
+header h1 {
+   padding: 10px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   background: rgb(152,192,61);
+   margin: 15px;
+   float: left;
+}
+
+header h1 img {
+   width: 206px;
+   height: 132px; 
+}
+
+header  p {
+   color: rgb(246,224,65);
+   font-size: 60px;
+   padding: 10px;
+   text-align: center;
+   position: absolute;
+   top: 15px;
+   right: 20px;
+   z-index: 2;
+}
+
+/* navigation */
+nav {
+   padding: 10px 10px 10px 0;
+   background: rgb(161,127,67);
+   font-size: 24px;
+   float: right;
+   height: 185px;
+   position: relative;
+   width: 544px;
+}
+
+nav ul {
+   text-align: center;
+   position: relative;
+   top: 100px;
+}
+
+nav ul li {
+   padding: 5px 10px;
+   display: inline-block;
+   margin: 0 13px;
+   background: rgb(152,192,61);
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;
+   background: black;
+   color: rgb(152,192,61);
+}
+
+nav ul li.currentPage {
+   color: black;
+   background: rgb(152,192,61);
+   border: 3px solid black;
+   padding: 2px 10px;
+}
+
+nav ul li:hover {
+   box-shadow: 10px 0px 17px white,
+               -10px 0px 17px white;
+}
+
+nav ul li.currentPage:hover {
+   box-shadow: none;
+}
+
+/* main content */
+article {
+   padding: 20px 20px 40px;
+   background: white;
+   position: relative;
+   overflow: auto;
+}
+
+article h2 {
+   font-size: 32px;
+   text-align: left;
+   margin-bottom: 20px;
+   margin-right: 20px;
+   float: left;
+}
+
+article h3 {
+   font-size: 24px;
+   font-weight: 700;
+   text-align: center;
+   margin-bottom: 0.5em;
+}
+
+article div.otherPage {
+   font-size: 18px;
+   float: left;
+   background: darkgray;
+   color: lightgray;
+   padding: 10px;
+   border: 1px solid darkgray;
+}
+
+article div.currentPage {
+   font-size: 18px;
+   float: left;
+   padding: 10px;
+   font-weight: 700;
+   background: gray;
+   color: rgb(246,224,65);
+   border: 1px solid black;
+}
+
+article div.results {
+   color: black;
+   float: left;
+   clear: left;
+   background: lightgray;
+   padding: 0.8em;
+}
+
+/* form */
+form {
+   width: 100%;
+}
+
+fieldset.text, fieldset.checks {
+   padding: 5px;
+   width: 45%;
+   float: left;
+}
+
+fieldset#fs0 {
+   width: 400px;
+   clear: left;
+}
+
+fieldset#fs1 {
+   width: 200px;
+}
+
+fieldset.checks {
+   width: 25%;
+}
+
+fieldset.btn {
+   float: right;
+   clear: right;
+}
+
+legend {
+   font-weight: 700;
+   font-size: 18px;
+   text-align: left;
+   padding-left: 0;
+   margin-bottom: 0.5em;
+}
+
+input, label {
+   line-height: 1.2em;
+   display: block;
+}
+
+fieldset.checks legend {
+   font-weight: 700;
+   font-size: 14px;
+}
+
+fieldset.checks input, fieldset.checks textarea {
+   float: left;
+   clear: left;
+   margin-right: 5px;
+   font-size: 18px;
+}
+
+fieldset.checks textarea {
+   margin-left: 0;
+   width: 10em;
+   height: 8em;
+}
+
+fieldset.checks label {
+   line-height: 1.2em;
+   margin-bottom: 4px;
+}
+
+fieldset.text label {
+   width: 4em;
+   text-align: right;
+   float: left;
+   clear: left;
+   margin: 5px 10px 0 0;
+   font-weight: 700;
+   font-size: 18px;
+}
+
+fieldset.text input {
+   margin: 7px 5px 0 0;
+}
+
+input[type=button], input[type=submit] {
+   margin: 15px auto 0;
+   font-size: 20px;
+   font-weight: 700;
+   color: rgb(246,224,65);
+   background: rgb(161,127,67);
+   border: 3px solid black;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+div#contactInfo {
+   width: 40%;
+   float: left;
+   clear: left;
+   color: gray;
+}
+
+div#contactInfo label {
+   float: left;
+   clear: left;
+   width: 75px;
+   margin-bottom: 5px;
+   display: inline-block;
+}
+
+div#contactInfo input {
+   float: left;
+   margin-bottom: 5px;
+}
+
+div#contactInfo input[id=""] {
+   visibility: hidden;
+}
+
+div#contactInfo input[disabled] {
+   border: 0px solid transparent;
+   background-color: transparent;
+   color: gray;
+}
+
+/* My Preferences Table */
+
+article > h2#prefHeading {
+   text-align: center;
+   width: 100%;
+}
+
+table#prefTable {
+   border-collapse: collapse;
+   margin: 30px auto;
+}
+
+table#prefTable td {
+   border: 1px solid gray;
+   padding: 5px;
+   background-color: ivory;
+}
+
+table#prefTable tr td:last-of-type {
+   min-width: 150px;
+}
+
+
+
+/* footer */
+footer {
+   background: black;
+   color: rgb(152,192,61);
+   text-align: center;
+   padding: 10px;
+   font-size: 20px;
+}

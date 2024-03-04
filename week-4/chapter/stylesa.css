@@ -1,0 +1,303 @@
+/*  JavaScript 7th Edition
+    Chapter 10
+    Chapter case
+
+    Oak Top House
+    Style sheet for Banquet Setup
+
+    Filename: stylesa.css
+*/
+
+/* apply a natural box layout model to all elements */
+* {
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+   width: 1024px;
+   background: #F5F5F5;
+   margin: 0 auto;
+   font-family: Georgia, "Droid Serif", serif; 
+}
+
+ol, ul {
+   list-style: none;
+}
+
+blockquote, q {
+   quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+
+
+/* header */
+header {
+   font-family: Aladin, cursive;
+   font-size: 72px;
+   background: #BBBBBB;
+   color: #5B291B;
+   text-align: center;
+   overflow: hidden;
+}
+
+header h1 {
+   margin: 20px;
+}
+
+
+
+/* article */
+article {
+   background: #F0EAD6;
+   padding: 20px 40px;
+   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+article h1 {
+   font-size: 1.8em;
+   margin-bottom: 12px;
+}
+
+article p {
+   line-height: 1.2;
+   font-size: 1.15em;
+   margin-bottom: 20px;
+}
+
+
+div#room {
+   position: relative;
+   width: 600px;
+   height: 350px;
+   background-color: rgba(235,132,117,1.00);
+   color: white;
+   margin: 10px auto;
+   user-select: none;
+}
+
+div#room p {
+   font-size: 1.2em;
+   margin: 5px 0 0 5px;
+}
+
+div#room > div.table {
+   position: absolute;
+   z-index: 1;
+   cursor: pointer;
+   color: white;
+   background-color: rgba(114, 114, 114, 0.8);
+   box-shadow: 3px 3px 5px black;
+   text-align: center;
+   font-size: 0.8em;
+   padding-top: 1em;
+   border: 3px solid #666666;
+   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"; 
+   user-select: none;
+}
+
+
+div#room > div.biground {
+   width: 100px;
+   height: 100px;
+   cursor: pointer;
+   margin: 5px;
+   color: white;
+   background-color: rgba(114, 114, 114, 0.8);
+   box-shadow: 3px 3px 5px black;
+   text-align: center;
+   font-size: 0.8em;
+   padding-top: 1em;
+   border: 3px solid #666666;
+   border-radius: 50%;
+   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"; 
+   top: 50px;
+   left: 100px;
+}
+
+
+
+div#room > div.smallround {
+   width: 74px;
+   height: 74px;
+   cursor: pointer;
+   margin: 5px;
+   color: white;
+   background-color: rgba(114, 114, 114, 0.8);
+   box-shadow: 3px 3px 5px black;
+   text-align: center;
+   font-size: 0.8em;
+   padding-top: 1em;
+   border: 3px solid #666666;
+   border-radius: 50%;
+   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+   top: 68px;
+   left: 240px;
+}
+
+
+div#room > div.tallstage {
+   width: 50px;
+   height: 270px;
+   line-height: 25px; 
+   top: 50px;
+   left: 15px;
+}
+
+div#room > div.longstage {
+   width: 270px;
+   height: 50px;
+   line-height: 25px; 
+   top: 270px;
+   left: 100px;
+}
+
+div#room > div#storage {
+   position: relative;
+   width: 150px;
+   height: 100px;
+   border: 1px solid gray;
+   background-color: ivory;
+   top: -24px;
+   left: 450px;
+   user-select: none;
+}
+
+div#storage p {
+   font-size: 1.15em;
+   color: gray;
+   text-align: right;
+   margin-right: 8px;
+}
+div#storage div.table {
+   position: absolute;
+   z-index: 1;
+   cursor: pointer;
+   background-color: rgba(114, 114, 114, 0.8);
+   font-size: 0em;
+   padding-top: 0;
+   border: transparent;
+}
+
+
+div#storage div.biground {
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   margin: 5px;
+   color: white;
+   background-color: rgba(114, 114, 114, 0.8);
+   text-align: center;
+   border: transparent;
+   border-radius: 50%;
+   top: 20px;
+   left: 40px;
+}
+
+
+
+div#storage div.smallround {
+   width: 25px;
+   height: 25px;
+   cursor: pointer;
+   margin: 5px;
+   color: white;
+   background-color: rgba(114, 114, 114, 0.8);
+   font-size: 0em;
+   border: transparent;
+   border-radius: 50%;
+   top: 30px;
+   left: 95px;
+}
+
+
+div#storage div.tallstage {
+   width: 20px;
+   height: 80px; 
+   top: 10px;
+   left: 10px;
+}
+
+div#storage div.longstage {
+   width: 80px;
+   height: 20px;
+   top: 70px;
+   left: 45px;
+}
+
+div#door1 {
+   position: absolute;
+   width: 150px;
+   height: 8px;
+   background-color: rgb(120, 120, 120);
+   top: 345px;
+   left: 100px;
+}
+
+div#door2 {
+   position: absolute;
+   width: 150px;
+   height: 8px;
+   background-color: rgb(120, 120, 120);
+   top: 345px;
+   left: 300px;
+}
+
+div#door3 {
+   position: absolute;
+   width: 8px;
+   height: 150px;
+   background-color: rgb(120, 120, 120);
+   top: 140px;
+   left: 595px;
+}
+
+/* footer */
+footer {
+   width: 100%;
+   text-align: center;
+   padding: 0.3em;
+   background: #BBBBBB;
+   color: #5B291B;
+   clear: both;
+}
+

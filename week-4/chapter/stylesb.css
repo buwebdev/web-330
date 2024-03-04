@@ -1,0 +1,137 @@
+/*  JavaScript 7th Edition
+    Chapter 10
+    Chapter case
+
+    Oak Top House
+    Style sheet for Oak Top House Directions
+
+    Filename: stylesb.css
+*/
+
+/* apply a natural box layout model to all elements */
+* {
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+   width: 1024px;
+   background: #F5F5F5;
+   margin: 0 auto;
+   font-family: Georgia, "Droid Serif", serif; 
+}
+
+ol, ul {
+   list-style: none;
+}
+
+blockquote, q {
+   quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+
+
+/* header */
+header {
+   font-family: Aladin, cursive;
+   font-size: 72px;
+   background: #BBBBBB;
+   color: #5B291B;
+   text-align: center;
+   overflow: hidden;
+}
+
+
+header h1 {
+   margin: 20px;
+}
+
+
+
+/* article */
+article {
+   background: #F0EAD6;
+   padding: 20px 0;
+   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+article h1 {
+   font-size: 1.8em;
+   text-align: center;
+   margin: 0 0 15px 0;
+}
+
+article p {
+   margin: 0 6% 10px;
+   font-size: 1.2em;
+   text-align: justify;
+   line-height: 1.4;
+}
+
+/* Map Styles */
+
+div#displayMap {
+   width: 40%;
+   padding-bottom: 30%;
+   height: 0;
+   margin: 20px auto;
+   border: 3px solid gray;
+}
+
+div#routeBox {
+   width: 70%;
+   margin: 10px auto;
+   min-height: 50px;
+   border: 3px solid gray;
+   text-align: center;
+}
+
+/* footer */
+footer {
+   width: 100%;
+   text-align: center;
+   padding: 0.3em;
+   background: #BBBBBB;
+   color: #5B291B;
+   clear: both;
+}
+

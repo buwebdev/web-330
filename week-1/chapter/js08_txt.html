@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 8
+      Chapter Case
+
+      Author: 
+      Date:   
+
+      Filename: js08.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Chapter 8 Case Problem: Draw Poker</title>
+   <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+   <section id="pokerTable">
+      <h1>Draw Poker</h1>
+      <div id="table">
+
+         <img src="cardstack.png" alt="" id="cardstack" />
+         <div id="hand">         
+            <img id="card0" class="cardImg" src="blank.gif" />
+            <img id="card1" class="cardImg" src="blank.gif" />
+            <img id="card2" class="cardImg" src="blank.gif" />
+            <img id="card3" class="cardImg" src="blank.gif" />
+            <img id="card4" class="cardImg" src="blank.gif" />
+         </div>
+         <div id="status"></div> 
+
+         <label id="bankLabel" for="bank">BANK</label>
+         <input type="text" readonly id="bank" name="bank" />
+         
+         <div id="board">
+            <input type="button" id="dealB" value="Deal" class="pokerButton" />
+            <input type="button" id="drawB" value="Draw" class="pokerButton" disabled />
+            <input type="button" id="standB" value="Stand" class="pokerButton" disabled />
+            <input type="button" id="resetB" value="Reset" class="pokerButton" /> 
+            <label id="betLabel" for="bet">BET</label>
+            <select id="bet" name="bet">
+               <option value="25">$25</option>
+               <option value="50">$50</option>
+               <option value="75">$75</option>
+               <option value="100">$100</option>
+            </select>
+         </div>                                                  
+      </div>                 
+      <p id="instructions">
+         Select the size of your bet from the drop-down list box and then
+         click the <strong>Deal</strong> button to deal the hand. To draw new
+         cards, click the cards to be discarded and then click the 
+         <strong>Draw</strong> button. To stand pat, click the 
+         <strong>Stand</strong> button. To restart the game, click the 
+         <strong>Reset</strong> button.
+      </p>
+
+      <table id="oddsTable">
+         <colgroup>
+            <col class="firstCol" />
+            <col class="secondCol" />
+            <col class="firstCol" />
+            <col class="secondCol" />
+         </colgroup>
+         <tr>
+            <th>Hand</th>
+            <th>Payoff</th>
+            <th>Hand</th>
+            <th>Payoff</th>
+         </tr>
+         <tr>
+            <td>Royal Flush</td>
+            <td>x 250</td>
+            <td>Straight</td>
+            <td>x 4</td>
+         </tr>
+         <tr>
+            <td>Straight Flush</td>
+            <td>x 50</td>
+            <td>3 of a Kind</td>
+            <td>x 3</td>
+         </tr>
+         <tr>
+            <td>4 of a Kind</td>
+            <td>x 25</td>
+            <td>2 Pair</td>
+            <td>x 2</td>
+         </tr>
+         <tr>
+            <td>Full House</td>
+            <td>x 9</td>
+            <td>Jacks or Better</td>
+            <td>x 1</td>
+         </tr>
+         <tr>
+            <td>Flush</td>
+            <td>x 6</td>
+            <td></td>
+            <td></td>
+         </tr>
+      </table>
+      
+   </section>     
+</body>
+</html>

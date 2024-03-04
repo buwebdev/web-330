@@ -1,0 +1,147 @@
+/*  JavaScript 7th Edition
+    Chapter 12
+    Hands-on Project 12-3
+
+    Filename: styles.css
+*/
+
+/* apply a natural box layout model to all elements */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+   width: 960px;
+   background: white;
+   margin: 0 auto;
+   font-family: Verdana, Geneva, sans-serif; 
+}
+
+ol, ul {
+   list-style: none;
+}
+
+/* page header */
+body > header {
+   background: #5472B2;
+   width: 100%;
+   color: #FFFFFF;
+   font-size: 48px;
+   text-align: center;
+   line-height: 1.5em;
+   margin-bottom: 0;
+}
+
+
+
+
+
+/*-------------------- Project Styles ------------------*/
+
+section {
+   background-color: #FFDB70;
+   margin-top: 0;
+   padding-bottom: 70px;
+}
+
+/* main content */
+
+header > img {
+   display: block;
+   width: 50%;
+   margin: 0 auto;
+   padding: 10px 0;
+}
+
+article {
+   width: 80%;
+   margin: 0 auto;
+      padding-bottom: 20px;
+}
+
+article h1 {
+   font-size: 2.2em;
+   margin: 0 0 20px;
+}
+
+article h1 img {
+   display: inline-block;
+   width: 30px;
+}
+
+article > img {
+   float: right;
+   width: 30%;
+   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+}
+
+article > p {
+   font-size: 1.1em;
+   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+   line-height: 1.3;
+   margin: 0 0 15px;
+}
+
+article > h2 {
+   font-size: 1.2em;
+   margin: 0 0 15px 0;
+   cursor: pointer;
+}
+
+article > h2 > img {
+   width: 20px;
+   margin-right: 20px;
+}
+
+article > ul {
+   margin: 0 0 15px 60px;
+   list-style-type:square;
+   font-size: 1.1em;
+   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+   line-height: 1.4em;  
+   display: none;
+}
+
+article > ol {
+   margin: 0 0 15px 60px;
+   list-style-type: decimal;
+   font-size: 1.1em;
+   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+   line-height: 1.4em;  
+   display: none;
+}
+
+article li {
+   margin-bottom: 6px;
+}

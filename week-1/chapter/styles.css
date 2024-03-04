@@ -1,0 +1,271 @@
+/*  JavaScript 7th Edition
+    Chapter 8
+    Chapter Case
+
+    Filename: styles.css
+*/
+
+/* apply a natural box layout model to all elements */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+   width: 1000px;
+   background: white;
+   margin: 0 auto;
+   font-family: Arial, Helvetica, sans-serif; 
+}
+
+ol, ul {
+   list-style: none;
+}
+
+
+/* Styles for this Project */
+
+
+html {
+   font-family: Verdana, Geneva, sans-serif;
+   font-size: 12px;
+}
+
+
+body {
+   margin: 0px auto;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
+   background-color: rgb(70, 136, 89);
+}
+
+/* Poker Table Styles */
+
+
+
+section#pokerTable h1 {
+   text-align: center;
+   font-size: 8.5em;
+   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+   color: rgb(0, 88, 0);
+   letter-spacing: 0.1em;
+   margin: 10px 0 0;
+   font-weight: normal;
+   font-variant: small-caps;
+   text-shadow: black 1px 1px 1px, white 0px -4px 0px;
+   transform: perspective(350px) rotateX(-15deg);
+}
+
+div#table {
+   width: 682px;
+   height: 337px;
+   position: relative;
+   margin: 5px auto 20px;
+   transform: perspective(350px) rotateX(10deg);
+   background: radial-gradient(farthest-corner,  rgb(0, 182, 0), rgb(0, 121, 0) 30%, rgb(0, 41, 0) 70%, black);
+   border: 15px outset rgba(162, 162, 172, 0.9);
+   border-radius: 20%;
+   box-shadow: black 0px 10px 10px 2px;
+}
+
+div#table img#cardstack {
+   display: block;
+   position: absolute;
+   top: 5px;
+   left: 5px;
+}
+
+div#table img.cardImg {
+   display: block; 
+   width: 71px; 
+   height: 96px; 
+   cursor: pointer;
+   position: absolute;
+   top: 100px;
+   box-shadow: rgb(51, 51, 51) 3px 3px 10px;
+}
+
+div#table img#card0 {
+   left: 144px; 
+}
+div#table img#card1 {
+   left: 220px; 
+}
+div#table img#card2 {
+   left: 298px;
+}
+div#table img#card3 {
+   left: 374px;
+}
+div#table img#card4 {
+   left: 450px;
+}
+
+div#status {
+   position: absolute; 
+   top: 220px; 
+   left: 165px;
+   width: 375px; 
+   text-align: center;
+   color: yellow; 
+   font-size: 1.8em; 
+   letter-spacing: 0.3em;
+}
+
+input.pokerButton, select#bet {
+   position: absolute; 
+   top: 255px;
+   text-align: center;
+   display: block; 
+   width: 100px;
+   font-size: 1.4em; 
+   color: white;
+   letter-spacing: 0.2em;
+   background-color: rgb(64, 76, 64);
+   border: 6px ridge rgba(255, 255, 255, 0.4);
+   cursor: pointer; 
+   box-shadow: black 0px 4px 4px;
+   opacity: 1;
+}
+
+input.pokerButton:disabled, select#bet:disabled {
+   opacity: 0.25;
+}
+
+input#dealB {
+   left: 64px;
+}
+input#drawB {
+   left: 180px; 
+}
+input#standB {
+   left: 294px;
+}
+input#resetB {
+   left: 404px;
+}
+
+
+label#betLabel {
+   font-size: 1.7em;
+   text-align: center;
+   display: block;
+   position: absolute;
+   top: 232px;
+   left: 514px;
+   width: 80px;
+   color: rgba(121, 181, 121, 0.7);
+   text-shadow: black 1px 1px 2px, white -1px -1px 0px;
+   letter-spacing: 0.2em;
+}
+
+label#bankLabel {
+   font-size: 2.2em;
+   text-align: center;
+   display: block;
+   position: absolute;
+   top: 114px;
+   left: 532px;
+   width: 120px;
+   color: rgba(121, 181, 121, 0.7);
+   text-shadow: black 1px 1px 2px, white -1px -1px 0px;
+   letter-spacing: 0.2em;
+}
+
+input#bank {
+   position: absolute; 
+   top: 140px;
+   left: 536px;
+   width: 90px;
+   height: 40px;
+   display: block; 
+   font-size: 1.7em; 
+   color: white;
+   letter-spacing: 0.2em;
+   background-color: transparent;
+   border: 6px double rgba(255, 255, 255, 0.2);
+   text-align: right;
+}
+
+select#bet {
+   left: 514px;
+   width: 90px;  
+   text-align: right;
+}
+
+p#instructions {
+   margin: 60px auto 20px;
+   font-size: 1.4em;
+   line-height: 1.4;
+   color: rgba(255, 255, 255, 0.7);
+   width: 700px;
+}
+
+p#instructions strong {
+   color: rgba(255, 255, 101, 0.8);
+   font-weight: normal;
+}
+
+#oddsTable {
+   margin: 20px auto;
+   background-color: rgba(255, 255, 255, 0.6); 
+   border: 2px solid rgb(64, 76, 64);
+   border-collapse: collapse;
+   font-size: 1.2em;
+}
+
+#oddsTable th {
+   background-color: rgb(64, 76, 64);
+   text-align: center;
+   font-weight: normal;
+   color: yellow;
+   padding: 4px 10px;
+   border-right: 1px solid yellow;
+   vertical-align: top;
+}
+#oddsTable td {
+   border: 1px solid rgb(64, 76, 64);
+   text-align: right;
+   padding: 2px 12px;
+   vertical-align: top;
+}
+#oddsTable .firstCol {
+   width: 200px;
+}
+#oddsTable .secondCol {
+   background-color: rgb(255, 255, 192); 
+   width: 80px;
+}
+

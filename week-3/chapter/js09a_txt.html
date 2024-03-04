@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 9
+      Chapter case
+
+      Eating Well in Season order page
+      Author: 
+      Date:   
+
+      Filename: js09a.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Eating Well in Season - Order</title>
+   <link rel="stylesheet" media="screen and (max-device-width: 999px)" href="styleshh.css" />
+   <link rel="stylesheet" media="screen and (min-device-width: 1000px)" href="styles.css" />
+   <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
+   <script src="js09a.js" defer></script>
+</head>
+
+<body>
+   <div id="container">
+      <header>
+         <h1>
+            <img src="ewis.png" alt="Eating Well in Season" title="" />
+         </h1>
+         <p>Eating Well in Season</p>
+      </header>
+   
+      <nav>
+         <ul>
+            <li><a href="#">About Us</a></li>
+            <li class="currentPage"><a href="#">Sign Up</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+   </div>
+      
+   <article>
+      <h2>Sign Up</h2>
+      
+      <div class="trail">
+         <div class="currentPage">Your info</div>
+         <div class="otherPage">Your preferences</div>
+      </div>
+
+      <form>
+         <fieldset class="text" id="fs0">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" />
+         </fieldset>
+         <fieldset class="text">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" />
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" />
+            <label for="state" id="stateLabel">State</label>
+            <input type="text" id="state" name="state" />
+            <label for="zip">Zip</label>
+            <input type="text" id="zip" name="zip" />
+         </fieldset>
+         <fieldset class="btn">
+            <input type="submit" id="nextBtn" value="Next &gt;" />
+         </fieldset>
+      </form>
+   </article>
+   <footer><p>Eating Well in Season &bull; Glover, VT</p></footer>
+</body>
+</html>

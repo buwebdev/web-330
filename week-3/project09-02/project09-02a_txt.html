@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 9
+      Hands-on Project 9-2
+
+      Author: 
+      Date:   
+
+      Filename: project09-02a.html
+   -->
+   <meta charset="utf-8" />
+   <title>Hands-on Project 9-2</title>
+   <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+   <header>
+      <h1>
+         Hands-on Project 9-2
+      </h1>
+   </header>
+
+   <section>
+      <h1>Rider Profile</h1>
+      <p id="intro">
+         CycloCrossings is a great place to find ride partners and create
+         tour groups. If you're a member, fill out the information below 
+         to be entered into our riders database. All information entered 
+         in CycloCrossings is confidential and will not be shared with 
+         other Web sites or commercial enterprises.
+      </p>
+
+      <table id="profile">
+        <colgroup>
+           <col id="firstCol" />
+           <col id="secondCol" />
+        </colgroup>
+         <tr>
+            <td>Rider Name</td>
+            <td>
+               <input name="riderName" id="riderName" type="text" />
+            </td>
+         </tr>
+         <tr>
+            <td>Age Group</td>	
+            <td>
+               <select name="ageGroup" id="ageGroup" size="1">
+                  <option value="">Select an Age Group</option>
+                  <option value="16 - 20">16 - 20</option>
+                  <option value="21 - 30">21 - 30</option>
+                  <option value="31 - 40">31 - 40</option>
+                  <option value="41 - 50">41 - 50</option>
+                  <option value="51 - 60">51 - 60</option>
+                  <option value="61 - 70">61 - 70</option>
+                  <option value="71+">71+</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <td>Bike</td>
+            <td>
+               <select name="bikeOption" id="bikeOption" size="1">
+                  <option value="">Select a Bike Option</option>
+                  <option value="road">Road Bike</option>
+                  <option value="mountain">Mountain Bike</option>
+                  <option value="either">Either</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <td>Route</td>
+            <td>
+               <select name="routeOption" id="routeOption" size="1">
+                  <option value="">Select a Route Option</option>
+                  <option value="road">Road</option>
+                  <option value="trail">Trail</option>
+                  <option value="either">Either</option>
+               </select>               
+            </td>
+         </tr>
+         <tr>
+            <td>Accommodation</td>
+            <td>
+               <select name="accOption" id="accOption" size="1">
+                  <option value="">Select an Accomodation Option</option>
+                  <option value="camping">Camping</option>
+                  <option value="motel">Motel</option>
+                  <option value="either">Either</option>
+               </select>               
+            </td>
+         </tr>
+         <tr>
+            <td>Region</td>	
+            <td>
+               <select name="region" id="region" size="1">
+                  <option value="">Specify your Cycling Region</option>
+                  <option value="Northeast">Northeast</option>
+                  <option value="East Coast">East Coast</option>
+                  <option value="Southeast">Southeast</option>
+                  <option value="Midwest">Midwest</option>
+                  <option value="Mountain">Mountain</option>
+                  <option value="Southwest">Southwest</option>
+                  <option value="West Coast">West Coast</option>
+                  <option value="NOrthwest">Northwest</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <td>Miles per Day</td>	
+            <td>
+               <select name="miles" id="miles" size="1">
+                  <option value="">Select a Miles per Day Goal</option>
+                  <option value="21 - 40">21 - 40</option>
+                  <option value="41 - 60">41 - 60</option>
+                  <option value="61 - 80">61 - 80</option>
+                  <option value="21 - 40">81 - 100</option>
+                  <option value="100+">100+</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <td>Other Comments</td>
+            <td>
+               <textarea name="comments" id="comments"></textarea>
+            </td>
+         </tr>
+      </table>
+
+      <p style="text-align: center">
+         <input id="submitButton" type="button" value="Submit" />
+      </p>      
+   </section>
+</body>
+</html>

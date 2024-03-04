@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+      JavaScript 7th Edition
+      Chapter 9
+      Chapter case
+
+      Eating Well in Season order page
+      Author: 
+      Date:   
+
+      Filename: js09b.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Eating Well in Season - Order</title>
+   <link rel="stylesheet" media="screen and (max-device-width: 400px)" href="styleshh.css" />
+   <link rel="stylesheet" media="screen and (min-device-width: 401px)" href="styles.css" />
+   <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+   <div id="container">
+      <header>
+         <h1>
+            <img src="ewis.png" alt="Eating Well in Season" title="" />
+         </h1>
+         <p>Eating Well in Season</p>
+      </header>
+   
+      <nav>
+         <ul>
+            <li><a href="#">About Us</a></li>
+            <li class="currentPage"><a href="#">Sign Up</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+   </div>
+      
+   <article>
+      <h2>Sign Up</h2>
+
+      <div class="trail">
+         <div class="otherPage">Your info</div>
+         <div class="currentPage">Your preferences</div>
+      </div>
+
+      <form>
+         <div id="contactInfo"></div>
+         <fieldset class="checks" id="fs1">
+            <legend>Food allergies</legend>
+            <textarea id="allergyDesc" name="allergies"></textarea>
+         </fieldset>
+
+         <fieldset class="checks">
+            <legend>Frequency</legend>
+            <input type="radio" id="weekly" value="Weekly" name="frequency" />
+            <label for="weekly" id="weeklyLabel">Weekly</label>
+            <input type="radio" id="biweekly" value="Biweekly" name="frequency" />
+            <label for="biweekly" id="biweeklyLabel">Biweekly</label>
+            <input type="radio" id="monthly" value="Monthly" name="frequency" />
+            <label for="monthly" id="monthlyLabel">Monthly</label>           
+            <legend>Package size</legend>
+            <input type="radio" id="taste" value="Taste test" name="size" />
+            <label for="taste" id="tasteLabel">Taste test</label>
+            <input type="radio" id="highlight" value="Healthy highlight" name="size" />
+            <label for="highlight" id="highlightLabel">Healthy Highlight</label>
+            <input type="radio" id="full" value="Full plate" name="size" />
+            <label for="full" id="fullLabel">Full plate</label>
+         </fieldset>        
+         
+         <fieldset class="btn">
+            <input type="button" id="signupBtn" value="Sign Up" />
+         </fieldset>
+
+      </form>
+
+   </article>
+   <footer><p>Eating Well in Season &bull; Glover, VT</p></footer>
+</body>
+</html>
